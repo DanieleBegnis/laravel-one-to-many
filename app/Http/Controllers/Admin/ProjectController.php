@@ -99,7 +99,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**
@@ -119,6 +120,7 @@ class ProjectController extends Controller
         }
 
         $project = Project::findOrFail($id);
+        $project->type_id = $formdata['type_id'];
         $project->name = $formdata['name'];
         $project->client_name = $formdata['client_name'];
         $project->summary = $formdata['summary'];
