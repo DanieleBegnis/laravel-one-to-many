@@ -2,8 +2,10 @@
 
 @section('content')
     <h3>{{ $project->name }}</h3>
+    @if ($project->type)
+        <h5>Tipo di Progetto: {{ $project->type->type }}</h5>
+    @endif
 
-    <h5>Tipo di Progetto: {{ $project->type->type }}</h5>
 
     @if ($project->project_thumbnail)
         <img src="{{ asset('storage/' . $project->project_thumbnail) }}" alt="">
@@ -18,7 +20,7 @@
     <p>Aggiornato il: {{ $project->updated_at }}</p>
 
     <h4>Modifica il post</h4>
-    
+
     <div class="row">
         <div class="col-6">
             <a href="{{ route('admin.projects.edit', ['project' => $project->id]) }}">Edit</a>
