@@ -14,6 +14,17 @@
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
+        <label for="type_id" class="form-label">Tipo di progetto</label>
+        <select class="form-select" aria-label="Default select example" id="type_id" name="type_id">
+            <option value="">Scegli un tipo di progetto</option>
+            @foreach ($types as $type)
+            <option value="{{$type->id}}">{{$type->type}}</option>
+            @endforeach
+          </select>
+        @error('type')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
+
         <div class="mb-3">
             <label for="client_name" class="form-label">Nome del Cliente</label>
             <input type="text" class="form-control" id="client_name" name="client_name" aria-describedby="emailHelp"
