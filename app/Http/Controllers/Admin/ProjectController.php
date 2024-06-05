@@ -47,7 +47,8 @@ class ProjectController extends Controller
                 'name' => 'required|max:250|min:10',
                 'client_name' => 'required',
                 'summary' => 'required|max:5000|min:10',
-                'project_thumbnail' => 'nullable|image'
+                'project_thumbnail' => 'nullable|image',
+                'type_id' => 'nullable|exists:types,id'
             ],
             [
                 'name.required' => 'Inserisci un titolo per il tuo progetto',

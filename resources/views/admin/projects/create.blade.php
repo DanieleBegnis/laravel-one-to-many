@@ -18,10 +18,10 @@
         <select class="form-select" aria-label="Default select example" id="type_id" name="type_id">
             <option value="">Scegli un tipo di progetto</option>
             @foreach ($types as $type)
-            <option value="{{$type->id}}">{{$type->type}}</option>
+                <option value="{{ $type->id }}">{{ $type->type }}</option>
             @endforeach
-          </select>
-        @error('type')
+        </select>
+        @error('type_id')
             <div class="alert alert-danger">{{ $message }}</div>
         @enderror
 
