@@ -3,6 +3,8 @@
 @section('content')
     <h3>{{ $project->name }}</h3>
 
+    <h5>Tipo di Progetto: {{ $project->type->type }}</h5>
+
     @if ($project->project_thumbnail)
         <img src="{{ asset('storage/' . $project->project_thumbnail) }}" alt="">
     @endif
